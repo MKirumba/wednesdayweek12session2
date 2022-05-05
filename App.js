@@ -1,14 +1,16 @@
 import React from "react";
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 
-const address = "joe.JPG";
-const image = { require: address };
+// const address = {require("../assets/Joe.JPG")};
+const image = "./assets/Joe.png";
 
 const App = () => (
   <View style={styles.container}>
-    <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-      <Text style={styles.text}>Inside</Text>
-    </ImageBackground>
+    <ImageBackground
+      source={require(image)}
+      resizeMode="cover"
+      style={styles.image}
+    ></ImageBackground>
   </View>
 );
 
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
     lineHeight: 84,
     fontWeight: "bold",
     textAlign: "center",
-    backgroundColor: "#000000c0",
+    backgroundColor: "#000000d0",
   },
 });
 
